@@ -7,13 +7,22 @@ const openai = new OpenAI({
 
 // Generate image controller
 const generateImage = async (req, res) => {
+  // Get prompt from request body
+  const { prompt, size } = req.body;
+  const imageSize =
+    size === "portrait"
+      ? "1024x1792"
+      : size === "landscape"
+      ? "1792x1024"
+      : "1024x1024"; // Default to square if invalid size
+
   try {
     // Generate image
     const response = await openai.images.generate({
       model: "dall-e-3",
-      prompt: "an Elephant flying in the sky",
+      prompt: prompt,
       n: 1,
-      size: "1024x1024",
+      size: imageSize,
     });
 
     // Get image URL
