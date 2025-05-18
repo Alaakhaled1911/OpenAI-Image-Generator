@@ -12,6 +12,7 @@ Generate an API KEY at [OpenAI](https://beta.openai.com/) and add it to the `.en
 
 Install the dependencies
 
+
 ```bash
 npm install
 ```
