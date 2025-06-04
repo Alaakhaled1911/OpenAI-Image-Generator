@@ -2,7 +2,7 @@ const OpenAI = require("openai");
 
 // Initialize OpenAI
 const openai = new OpenAI({
-  apiKey: process.env.OPEN_API_KEY,
+  apiKey: process.env.OPENAIAPIKEY,
 });
 
 // Generate image controller
